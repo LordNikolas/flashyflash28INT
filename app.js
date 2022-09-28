@@ -1,28 +1,34 @@
-const app = document.getElementById("app")
-      
-function Header() {
-    return <h1>Develop. Preview. 
-        Ship, but not yet. :l 🚀</h1>;
-  }
-  
-  function HomePage() {
-    return (
-      <div>
-        <Header />
-      </div>
-    );
-  }
+const Card = require('./card.js')
 
-  function CurrentCard() {
-    return ( <h2> THIS IS A FLASH CARD </h2> );
-  }
+const app = document.getElementById("app");
 
-  function ShowCard() { 
-    return (
-      <div>
-        <CurrentCard />
-      </div>);
-  }
+let current_card = 0;
 
-ReactDOM.render(<CurrentCard />, app);
+const cards = [
+  new Card(
+    "Question 1",
+    "Is React a framework or a library?",
+    "library",
+  ),
+  new Card(
+    "Question 2",
+    "Is NextJS a framework or a library?",
+    "framework",
+  ),
+  new Card(
+    "Question 3",
+    "Is React a framework or a library?",
+    "library",
+  ),
+];
+
+function ShowCard() { 
+  return (
+    <div class="card">
+      <h2>{cards[current_card].title}</h2>
+      <p>{cards[current_card].question}</p>
+    </div>);
+}
+
+ReactDOM.render(<ShowCard />, app);
 
