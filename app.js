@@ -12,5 +12,17 @@ function Header() {
       </div>
     );
   }
-  
-ReactDOM.render(<HomePage />, app);
+
+  function CurrentCard() {
+    return ( <h2> THIS IS A FLASH CARD </h2> );
+  }
+
+  function ShowCard() { 
+    return (
+      <div>
+        <CurrentCard />
+      </div>);
+  }
+
+ReactDOM.render(<CurrentCard />, app);
+
